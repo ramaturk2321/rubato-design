@@ -1,9 +1,13 @@
 import { ProjectGrid } from "@/components/project-grid";
 import { BackToTop } from "@/components/back-to-top";
-import { getProjectsByCategory } from "@/data/projects";
+import { getProjectsByCategory, Category } from "@/data/projects";
 
-export default function HomePage() {
-  const projects = getProjectsByCategory("ambalaj");
+interface CategoryPageProps {
+  category: Category;
+}
+
+export function CategoryPage({ category }: CategoryPageProps) {
+  const projects = getProjectsByCategory(category);
 
   return (
     <>
