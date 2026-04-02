@@ -13,7 +13,7 @@ export function ProjectGrid({ projects }: ProjectGridProps) {
           <img
             src={project.image}
             alt={project.title}
-            className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105"
+            className="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
           />
           {/* Hover overlay */}
