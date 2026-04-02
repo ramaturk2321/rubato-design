@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import { Project } from "@/data/projects";
 
 interface ProjectGridProps {
@@ -9,13 +9,12 @@ export function ProjectGrid({ projects }: ProjectGridProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
       {projects.map((project) => (
-        <div key={project.id} className="group relative overflow-hidden aspect-square cursor-pointer">
-          <Image
+        <div key={project.id} className="group relative overflow-hidden cursor-pointer">
+          <img
             src={project.image}
             alt={project.title}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, 50vw"
+            className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
           />
           {/* Hover overlay */}
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-all duration-300 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100">
